@@ -1,13 +1,23 @@
-from telegram.ext import Updater
-from telegram.ext import CommandHandler
+from telegram.ext import CommandHandler, Updater
 from Data import Data
 from settings_local import bot_token
 
 
+commands = ['/start - начать сначала', '/show_movies - посмотреть идущие в кино фильмы', '/book - заказать билет']
+
+
 def start(bot, update):
     # подробнее об объекте update: https://core.telegram.org/bots/api#update
-    bot.sendMessage(chat_id=update.message.chat_id, text="Кулити, вот доступные команды: \n" +
-                    '/start - начать сначала \n' + '/show_movies - глянуть идущие в кино фильмы')
+    bot.sendMessage(chat_id=update.message.chat_id, text="Ку, вот доступные команды: \n" + print_commands(commands))
+
+
+def book_ticket(bot, update):
+    bot.sendMessage(chat_id=update.message.chat_id,
+                    text='Чтобы заказать билет перейдите по ссылке: https://multiplex.ua/cinema/kherson/fabrika')
+
+
+def print_commands(command_list):
+    return '\n'.join(command_list)
 
 
 def show_movies(bot, update):
@@ -20,8 +30,10 @@ data.get_page()
 data.get_movie_titles()
 updater = Updater(token=bot_token)
 # тут токен, который выдал вам Ботский Отец!
-start_handler = CommandHandler('start', start)  # этот обработчик реагирует # только на команду /start
+start_handler = CommandHandler('start', start)
 movies_list_handler = CommandHandler('show_movies', show_movies)
+book_ticket_handler = CommandHandler('book', book_ticket)
 updater.dispatcher.add_handler(movies_list_handler)
 updater.dispatcher.add_handler(start_handler)  # регистрируем в госреестре обработчиков
+updater.dispatcher.add_handler(book_ticket_handler)
 updater.start_polling()  # поехали!

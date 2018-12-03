@@ -1,2 +1,2 @@
 venv/
-local_settings/
+settings_local.py

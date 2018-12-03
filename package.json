@@ -1,0 +1,22 @@
+{
+  "name": "multiplex-bot",
+  "version": "1.0.0",
+  "main": "index.py",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chizzzy/multiplex-python-bot.git"
+  },
+  "author": "yuriy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chizzzy/multiplex-python-bot/issues"
+  },
+  "homepage": "https://github.com/chizzzy/multiplex-python-bot#readme",
+  "description": ""
+}
+

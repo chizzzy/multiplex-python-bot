@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/multiplex-bot.iml" filepath="$PROJECT_DIR$/.idea/multiplex-bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/multiplex-python-bot.iml" filepath="$PROJECT_DIR$/.idea/multiplex-python-bot.iml" />
     </modules>
   </component>
 </project>
